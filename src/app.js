@@ -19,7 +19,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Swagger docs (tanpa API key)
+// Swagger docs
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
   customSiteTitle: 'Sistem Penjadwalan API Docs',
   customCss: '.swagger-ui .topbar { display: none }',
@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
   });
 });
 
-// API Key middleware untuk semua endpoint /api
+// API Key middleware 
 app.use('/api', apiKeyMiddleware);
 
 // Routes — register specific routes SEBELUM route generic /:id

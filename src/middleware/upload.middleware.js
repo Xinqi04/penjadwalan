@@ -1,7 +1,6 @@
 const multer = require('multer');
 const path = require('path');
 
-// Gunakan memory storage agar kompatibel dengan Vercel (read-only filesystem)
 const storage = multer.memoryStorage();
 
 const fileFilter = (req, file, cb) => {

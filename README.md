@@ -136,28 +136,6 @@ Saat membuat atau mengupdate jadwal, sistem otomatis mendeteksi **bentrok**:
 
 Jika bentrok terdeteksi, API mengembalikan **HTTP 409 Conflict**.
 
-## Format Response
-
-**Success:**
-
-```json
-{
-  "success": true,
-  "message": "...",
-  "data": "..."
-}
-```
-
-**Error:**
-
-```json
-{
-  "success": false,
-  "message": "...",
-  "error": "..."
-}
-```
-
 ## Format File Excel (Import)
 
 File Excel yang di-upload harus memiliki kolom berikut di sheet pertama:
@@ -174,32 +152,6 @@ File Excel yang di-upload harus memiliki kolom berikut di sheet pertama:
 | `time_start`   | String  | 07:00           |
 | `time_end`     | String  | 07:45           |
 
-## Deployment ke Vercel
-
-1. Install Vercel CLI:
-
-```bash
-npm i -g vercel
-```
-
-2. Login dan deploy:
-
-```bash
-vercel login
-vercel
-```
-
-3. Set environment variables di Vercel Dashboard:
-   - `DATABASE_URL`
-   - `API_KEY`
-
-4. Pastikan Prisma Client ter-generate saat build. Tambahkan di Vercel **Build Command**:
-
-```
-npx prisma generate
-```
-
-File `vercel.json` sudah dikonfigurasi untuk routing ke `src/server.js`.
 
 ## Struktur Project
 
@@ -237,6 +189,3 @@ prisma/
 └── schema.prisma             # Database schema
 ```
 
-## Lisensi
-
-ISC
