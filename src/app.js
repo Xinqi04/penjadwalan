@@ -20,9 +20,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Swagger docs
+const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
   customSiteTitle: 'Sistem Penjadwalan API Docs',
   customCss: '.swagger-ui .topbar { display: none }',
+  customCssUrl: CSS_URL,
+  customJs: [
+    'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui-bundle.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui-standalone-preset.js',
+  ],
 }));
 
 // Health check
