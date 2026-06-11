@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Schedule {
+  id           String   @id @default(uuid()) @db.Uuid
+  class_code   String   @db.VarChar(10)
+  class_name   String   @db.VarChar(10)
+  subject_code String   @db.VarChar(10)
+  teacher_nik  String   @db.VarChar(20)
+  teacher_name String   @db.VarChar(100)
+  date         DateTime @db.Date
+  jam_ke       Int
+  time_start   String   @db.VarChar(8)  // Format: "HH:MM"
+  time_end     String   @db.VarChar(8)  // Format: "HH:MM"
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+
+  @@map("schedules")
+}
