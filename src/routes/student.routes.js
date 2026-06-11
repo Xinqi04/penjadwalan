@@ -25,7 +25,7 @@ const studentController = require('../controllers/student.controller');
  *           type: string
  *           format: date
  *         description: Tanggal jadwal
- *         example: "2025-06-10"
+ *         example: "2026-06-10"
  *     responses:
  *       200:
  *         description: Daftar jadwal siswa diurutkan berdasarkan jam_ke
@@ -39,9 +39,27 @@ const studentController = require('../controllers/student.controller');
  *                 message:
  *                   type: string
  *                 data:
- *                   type: array
- *                   items:
- *                     $ref: '#/components/schemas/Schedule'
+ *                   type: object
+ *                   properties:
+ *                     class_name:
+ *                       type: string
+ *                     date:
+ *                       type: string
+ *                     jadwal:
+ *                       type: array
+ *                       items:
+ *                         type: object
+ *                         properties:
+ *                           jam_ke:
+ *                             type: integer
+ *                           subject_code:
+ *                             type: string
+ *                           teacher_name:
+ *                             type: string
+ *                           time_start:
+ *                             type: string
+ *                           time_end:
+ *                             type: string
  *       400:
  *         description: Parameter tidak lengkap
  */

@@ -33,7 +33,7 @@ const teacherController = require('../controllers/teacher.controller');
  *           type: string
  *           format: date
  *         description: Tanggal selesai
- *         example: "2025-06-30"
+ *         example: "2026-06-30"
  *     responses:
  *       200:
  *         description: Data guru, total JP, dan daftar jadwal
@@ -49,16 +49,34 @@ const teacherController = require('../controllers/teacher.controller');
  *                 data:
  *                   type: object
  *                   properties:
- *                     teacher_nik:
- *                       type: string
  *                     teacher_name:
  *                       type: string
+ *                     periode:
+ *                       type: object
+ *                       properties:
+ *                         start_date:
+ *                           type: string
+ *                         end_date:
+ *                           type: string
  *                     total_jp:
  *                       type: integer
- *                     schedules:
+ *                     jadwal:
  *                       type: array
  *                       items:
- *                         $ref: '#/components/schemas/Schedule'
+ *                         type: object
+ *                         properties:
+ *                           date:
+ *                             type: string
+ *                           class_name:
+ *                             type: string
+ *                           subject_code:
+ *                             type: string
+ *                           jam_ke:
+ *                             type: integer
+ *                           time_start:
+ *                             type: string
+ *                           time_end:
+ *                             type: string
  *       400:
  *         description: Parameter tidak lengkap
  */

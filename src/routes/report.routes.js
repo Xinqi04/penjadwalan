@@ -18,7 +18,7 @@ const reportController = require('../controllers/report.controller');
  *           type: string
  *           format: date
  *         description: Tanggal mulai
- *         example: "2025-06-01"
+ *         example: "2026-06-01"
  *       - in: query
  *         name: end_date
  *         required: true
@@ -26,7 +26,7 @@ const reportController = require('../controllers/report.controller');
  *           type: string
  *           format: date
  *         description: Tanggal selesai
- *         example: "2025-06-30"
+ *         example: "2026-06-30"
  *     responses:
  *       200:
  *         description: Rekap total JP seluruh guru
@@ -40,16 +40,39 @@ const reportController = require('../controllers/report.controller');
  *                 message:
  *                   type: string
  *                 data:
- *                   type: array
- *                   items:
- *                     type: object
- *                     properties:
- *                       teacher_nik:
- *                         type: string
- *                       teacher_name:
- *                         type: string
- *                       total_jp:
- *                         type: integer
+ *                   type: object
+ *                   properties:
+ *                     periode:
+ *                       type: object
+ *                       properties:
+ *                         start_date:
+ *                           type: string
+ *                         end_date:
+ *                           type: string
+ *                     total_pengajar:
+ *                       type: integer
+ *                     rekap:
+ *                       type: array
+ *                       items:
+ *                         type: object
+ *                         properties:
+ *                           teacher_nik:
+ *                             type: string
+ *                           teacher_name:
+ *                             type: string
+ *                           total_jp:
+ *                             type: integer
+ *                           total_kelas:
+ *                             type: integer
+ *                           detail:
+ *                             type: array
+ *                             items:
+ *                               type: object
+ *                               properties:
+ *                                 class_name:
+ *                                   type: string
+ *                                 jumlah_jp:
+ *                                   type: integer
  *       400:
  *         description: Parameter tidak lengkap
  */
