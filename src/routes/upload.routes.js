@@ -60,7 +60,7 @@ router.post('/upload', upload.single('file'), uploadController.uploadExcel);
  *           type: string
  *           format: date
  *         description: Tanggal mulai
- *         example: "2025-06-01"
+ *         example: "2026-06-01"
  *       - in: query
  *         name: end_date
  *         required: true
@@ -68,7 +68,7 @@ router.post('/upload', upload.single('file'), uploadController.uploadExcel);
  *           type: string
  *           format: date
  *         description: Tanggal selesai
- *         example: "2025-06-30"
+ *         example: "2026-06-30"
  *     responses:
  *       200:
  *         description: File Excel untuk di-download
